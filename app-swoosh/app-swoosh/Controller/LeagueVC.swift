@@ -44,6 +44,12 @@ class LeagueVC: UIViewController {
         player.desiredLeague = desire
         nextBtn.isEnabled = true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player
+        }
+    }
      // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
